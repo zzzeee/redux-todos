@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setFilter } from '../actions';
+import '../style/AddDepartment.css';
 
 let BtnFilter = ({active, title, clickDepartment}) => {
 	return (
-		<button style={{
-			background: active ? 'red' : '#fff', 
+		<button className="btn-primary" style={{
+			background: active ? '#951203' : '#888', 
+			margin: '20px',
 		}} onClick={clickDepartment}>
 			{title}
 		</button>

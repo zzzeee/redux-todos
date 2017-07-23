@@ -7,7 +7,10 @@ const Departments = ({deplist, clickDelete,}) => {
 			{deplist.map((item, index)=>{
 				return (
 					<li key={index} className="listRow" onClick={e=>{
-						clickDelete(item.id);
+						!item.isDel && clickDelete(item.id);
+					}} style={{
+						color: item.isDel ? '#bbb' : '#333',
+						cursor: item.isDel ? 'text' : 'pointer',
 					}}>
 						{item.showName + ' (' + item.name + ')'}
 					</li>
