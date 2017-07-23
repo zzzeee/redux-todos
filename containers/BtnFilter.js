@@ -6,7 +6,7 @@ import '../style/AddDepartment.css';
 let BtnFilter = ({active, title, clickDepartment}) => {
 	return (
 		<button className="btn-primary" style={{
-			background: active ? '#951203' : '#888', 
+			background: active ? '#cc3220' : '#888', 
 			margin: '20px',
 		}} onClick={clickDepartment}>
 			{title}
