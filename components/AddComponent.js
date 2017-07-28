@@ -22,6 +22,14 @@ const AddComponent = ({ dispatch }) => {
 				input1.value = '';
 				input2.value = '';
 			}} />
+			<input type="submit" className="btn-primary" value="异步提交" onClick={(e)=>{
+				if(!input1 || !input2 || !input1.value || !input2.value) return;
+				let name = input1.value.trim();
+				let showName = input2.value.trim();
+				dispatch({type: 'INCREMENT_ASYNC', 'name': name, 'showName': showName});
+				input1.value = '';
+				input2.value = '';
+			}} />
 		</div>
 	);
 }

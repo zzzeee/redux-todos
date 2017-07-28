@@ -6,12 +6,14 @@ import createSagaMiddleware from 'redux-saga';
 
 import App from './components/App';
 import reducer from './reducers';
-import { helloSaga } from './sagas';
+import { watchIncrementAsync } from './sagas';
 
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
 	reducer,
-	applyMiddleware(createSagaMiddleware(helloSaga))
+	applyMiddleware(sagaMiddleware)
 );
+sagaMiddleware.run(watchIncrementAsync);
 
 store.subscribe(()=>console.log(store.getState()));
 
